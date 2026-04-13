@@ -36,27 +36,29 @@
 	.typewrite{
 		--left-pad: 0px;
 		--text-rate: 0.00s; /* Default is 0.05s */
+		--start-delay: 0s; /* Default is 0s */
 		display: inline;
 		color: #0000 !important;
 		background: 
 			linear-gradient(-90deg, var(--text-color) 3px,#0000 0) 10px 0,
     		linear-gradient(var(--text-color) 0 0) 0 0;
-		background-size: calc(var(--n) * 1ch + var(--left-pad)) 200%;
+		background-size: var(--left-pad) 200%;
 		-webkit-background-clip: content-box,text;
 		background-clip: content-box,text;
 		background-repeat:no-repeat;
 		animation:
-			text-anim calc(var(--n)* var(--text-rate)) steps(var(--n)) forwards,
+			text-anim calc(var(--n)* var(--text-rate)) steps(var(--n)) var(--start-delay) forwards,
 			blinker-anim .7s infinite steps(1);
 	}
 	/* Class for animated interactive text. */
 	.player.typewrite {
 		--left-pad: 1em;
 		--text-rate: 0.12s; /* Default is 0.12s */
+		--start-delay: 1s; /* Default is 1s */
 		display: block;
 	}
 	@keyframes text-anim {
-		from {background-size: var(--left-pad) 200%}
+		to {background-size: calc(var(--n) * 1ch + var(--left-pad)) 200%;}
 	}
 	@keyframes blinker-anim {
 		50% {background-position: 0 -100%, 0 0}
@@ -66,7 +68,7 @@
 <body style="background-color:black;">
 
 <div> 
-	<h1 class="text typewrite">There is a noise from somewhere behind you.</h1><!--
+	<h1 class="text typewrite">There is a noise from somewhere behind you.</h1>
 	<h2 class="text">
 		The noise is a mechanical whirring coming from your preservation chamber.
 	</h2>
@@ -78,7 +80,7 @@
 	</h2>
 	<h2 class="text">
 		You step out onto the floor.
-	</h2>-->
+	</h2>
 	<h2 class="text">
 		You wake up.<br>
 	</h2>
