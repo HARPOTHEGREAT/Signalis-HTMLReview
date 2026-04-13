@@ -1,9 +1,13 @@
 <!doctype html>
 <html lang="us">
+	
+<!-- Thanks Freja for helping me with the interactive features -->
+
 <head>
 	<meta charset="utf-8">
 	<title>The Future of Remembering About Games</title>
 	<style>
+	/* Font should evoke the appearance fo typing into a terminal. */
 	body{
 		font-family: "Courier New", "monospace";
 		margin: 100px;
@@ -14,6 +18,7 @@
 	body>div>* {
 		display: none;
 	}
+	/* Interactive text is red */
 	.player{
 		padding: 1em;
 		--text-color: red;
@@ -23,12 +28,14 @@
 		display: block;
 		color: var(--text-color);
 	}
+	/* Non-interactive text is white */
 	.text{
 		--text-color: white;
 	}
+	/* Class for animated non-interactive text. */
 	.typewrite{
 		--left-pad: 0px;
-		--text-rate: 0.075s;
+		--text-rate: 0.00s; /* Default is 0.05s */
 		display: inline;
 		color: #0000 !important;
 		background: 
@@ -42,9 +49,10 @@
 			text-anim calc(var(--n)* var(--text-rate)) steps(var(--n)) forwards,
 			blinker-anim .7s infinite steps(1);
 	}
+	/* Class for animated interactive text. */
 	.player.typewrite {
 		--left-pad: 1em;
-		--text-rate: 0.3s;
+		--text-rate: 0.12s; /* Default is 0.12s */
 		display: block;
 	}
 	@keyframes text-anim {
@@ -57,13 +65,21 @@
 </head>
 <body style="background-color:black;">
 
-<div>
-	<h1 class="text typewrite">There is a noise from somewhere behind you.</h1>
+<div> 
+	<h1 class="text typewrite">There is a noise from somewhere behind you.</h1><!--
 	<h2 class="text">
-		The noise is a mechanical whirring coming from your preservation chamber.<br>
-		As it pivots up from the recess in the metallic floor, the chamber’s doors effortlessly swing wide.<br>
-		You open your eyes.<br>
-		You step out onto the floor.<br>
+		The noise is a mechanical whirring coming from your preservation chamber.
+	</h2>
+	<h2 class="text">
+		As it pivots up from the recess in the metallic floor, the chamber’s doors effortlessly swing wide.
+	</h2>
+	<h2 class="text">
+		You open your eyes.
+	</h2>
+	<h2 class="text">
+		You step out onto the floor.
+	</h2>-->
+	<h2 class="text">
 		You wake up.<br>
 	</h2>
 
@@ -72,7 +88,9 @@
 	</h2>
 
 	<h2 class="text">
-		The maintenance room is barren except for the preservation chamber mounted into the center of the room.<br>
+		The maintenance room is barren except for the preservation chamber mounted into the center of the room.
+	</h2>
+	<h2 class="text">
 		There is a door leading out of the room.<br>
 	</h2>
 
@@ -337,32 +355,44 @@
 
 </body>
 </html>
+
 <script type="text/javascript">
 	const body = document.firstElementChild.children.item(1);
 	const content = body.firstElementChild;
-	const paragraphDelay = 500;
+	const paragraphDelay = 500; // Delay between paragraphs in miliseconds
+	//const playerDelay = 2000; // Delay before red text in miliseconds
 
 	for (let elem of content.children) {
 		elem.style.setProperty('--n', elem.innerHTML.replace(/(<br>)|\n\s*/g,"").trim().length);
 	}
+	// Make sure the first line is delayed because the other lines are delayed in the recursive goNext function (I think is what this line does)
 	content.children.item(0).addEventListener("animationend", () => setTimeout(() => goNext(content.children.item(0)), paragraphDelay));
 	
 	let currentNode = null;
 	function goNext(current) {
+		// Stop animating current line and make it normal text
 		current.classList.add("show");
 		current.classList.remove("typewrite");
+		
 		next = current.nextElementSibling;
-		if (next != null)
+
+		// Lock scrolling until end of document by checking if next item exists
+		if (next != null) // If there is more text
 		{
+			// Animate next line and keep it in view
 			next.classList.add("typewrite");
 			next.scrollIntoView();
+
 			currentNode = next;
-			if (next.classList.contains("player"))
+
+			// Check if next line is player text
+			if (next.classList.contains("player")) // if yes, make user click to proceed
 				next.addEventListener("animationend", () => next.addEventListener("click", () => goNext(next)));
-			else
-				next.addEventListener("animationend", () => setTimeout(() => goNext(next), paragraphDelay));
+			else // if no, proceed after paragraphDelay has passed
+				next.addEventListener("animationend", () => setTimeout(() => goNext(next), paragraphDelay)); // wait before printing next line
 		}
-		else
+		else // If there is no more text
+			// Allow reader to scroll back up and read whole document
 			body.style.setProperty("overflow", "scroll");
 	}
 	window.onresize = () => {
