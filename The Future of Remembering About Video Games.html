@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="us">
+<head>
+	<meta charset="utf-8">
+	<title>The Future of Remembering About Games</title>
+	<style>
+	body{
+		font-family: "Courier New", "monospace";
+		margin: 100px;
+		height: 100%;
+		scroll-behavior: smooth;
+		overflow: hidden;
+	}
+	body>div>* {
+		display: none;
+	}
+	.player{
+		padding: 1em;
+		--text-color: red;
+		cursor: pointer;
+	}
+	.show{
+		display: block;
+		color: var(--text-color);
+	}
+	.text{
+		--text-color: white;
+	}
+	.typewrite{
+		--left-pad: 0px;
+		--text-rate: 0.075s;
+		display: inline;
+		color: #0000 !important;
+		background: 
+			linear-gradient(-90deg, var(--text-color) 3px,#0000 0) 10px 0,
+    		linear-gradient(var(--text-color) 0 0) 0 0;
+		background-size: calc(var(--n) * 1ch + var(--left-pad)) 200%;
+		-webkit-background-clip: content-box,text;
+		background-clip: content-box,text;
+		background-repeat:no-repeat;
+		animation:
+			text-anim calc(var(--n)* var(--text-rate)) steps(var(--n)) forwards,
+			blinker-anim .7s infinite steps(1);
+	}
+	.player.typewrite {
+		--left-pad: 1em;
+		--text-rate: 0.3s;
+		display: block;
+	}
+	@keyframes text-anim {
+		from {background-size: var(--left-pad) 200%}
+	}
+	@keyframes blinker-anim {
+		50% {background-position: 0 -100%, 0 0}
+	}
+	</style>
+</head>
+<body style="background-color:black;">
+
+<div>
+	<h1 class="text typewrite">There is a noise from somewhere behind you.</h1>
+	<h2 class="text">
+		The noise is a mechanical whirring coming from your preservation chamber.<br>
+		As it pivots up from the recess in the metallic floor, the chamber’s doors effortlessly swing wide.<br>
+		You open your eyes.<br>
+		You step out onto the floor.<br>
+		You wake up.<br>
+	</h2>
+
+	<h2 class="player">
+		Look<br>
+	</h2>
+
+	<h2 class="text">
+		The maintenance room is barren except for the preservation chamber mounted into the center of the room.<br>
+		There is a door leading out of the room.<br>
+	</h2>
+
+	<h2 class="player">
+		Look door<br>
+	</h2>
+
+	<h2 class="text">
+		You approach the room’s exit and it activates automatically, its hydraulics sending the door smoothly into the ceiling.
+		The opening invites you out of the room, toward the fore of the craft.<br>
+	</h2>
+
+	<h2 class="player">
+		Go fore<br>
+	</h2>
+
+	<h2 class="text">
+		You enter into the lower gallery. It is an octagonal room with a door leading fore, a door leading aft to the maintenance room, and a ladder leading up into the ceiling.<br>
+	</h2>
+
+	<h2 class="player">
+		Go fore<br>
+	</h2>
+
+	<h2 class="text">
+		You enter the cargo bay. It is a long hallway filled with cargo.<br>
+	There is a door leading fore and a door leading aft into the lower gallery.<br>
+	</h2>
+
+	<h2 class="player">
+		Look cargo<br>
+	</h2>
+
+	<h2 class="text">
+		The hallway is crowded with cargo. Some large plastic cases sit near the door to the gallery, some rounded metal containers are bunched together along the port wall,
+		and some pallets covered with tarp gather dust at the fore end of the cargo bay. You can hear the dull thrum of the reactor through the wall to your left.
+		Most of the cargo is either rations, medical supplies, toiletries, or fuel, but a large number of tools have found themselves at home here as well.<br>
+	</h2>
+
+	<h2 class="player">
+		Go fore<br>
+	</h2>
+
+	<h2 class="text">
+		You enter the observatory. The walls here are lined with shelves containing paperback prints of old serial novels,
+		user manuals for the many and varied systems installed on Penrose-type vessels, and some video cassettes. The physical media adorning the room reminds you of younger times.
+		In the front of the room is an upholstered chair which faces a window.<br>
+	</h2>
+
+	<h2 class="player">
+		Sit chair<br>
+	</h2>
+
+	<h2 class="text">
+		You sit down in the chair and close your eyes. Images flash past of the first time you were here: exploring the rooms, absorbing the particular atmosphere,
+		and time spent in the menus fiddling with graphics options.
+		You remember a time from when this space was new to you, when this was truly unlike anything you had seen before,
+		and when you were yet unaware of how experiencing each new work of art changes you in slight, permanent ways.<br>
+	</h2>
+
+	<h2 class="player">
+		Go gallery<br>
+	</h2>
+
+	<h2 class="text">
+		You return to the lower gallery. It is an octagonal room with a door leading fore to the observatory, a door leading aft to the maintenance room,
+		and a ladder leading up into the ceiling.<br>
+	</h2>
+
+	<h2 class="player">
+		Go ladder<br>
+	</h2>
+
+	<h2 class="text">
+		You climb the ladder, arriving in the upper gallery.
+		It is an octagonal room with a door leading fore, a door leading port, a door leading starboard, and a ladder leading down to the lower gallery.<br>
+		Shelves and cabinets line the other faces of the octagonal room.<br>
+	</h2>
+
+	<h2 class="player">
+		Look cabinets<br>
+	</h2>
+
+	<h2 class="text">
+		The cabinets house various items. Clean bedsheets, towels, and other such items make up the largest cabinet.
+		The others house speakers, controllers, charging stations, and spare batteries for the items which use them.
+		A headset is here, too, and it reminds you of the Quest 2 gathering dust on your desk.<br>
+	</h2>
+
+	<h2 class="player">
+		Go starboard<br>
+	</h2>
+
+	<h2 class="text">
+		You enter the environmental office. The environmental control unit hums softly.
+		The red glow of its control panel illuminates a keypad, three buttons wide and three buttons tall.
+		The keypad is attached to a life support chamber.<br>
+	</h2>
+
+	<h2 class="player">
+		Look chamber<br>
+	</h2>
+
+	<h2 class="text">
+		In the middle of the room sits a similar sized chamber to yours, but with different readouts, smoother inside walls, and filled with a liquid designed to keep the occupant alive as their bodily functions slow down.
+		You think that it’s interesting how when the media you consume predicts the future, certain proposed technological innovations weave their way into the genre until it becomes ubiquitous.
+		Of course there is a life support capsule here; it’s the future. Ironically, once the device becomes familiar, its ubiquity makes it invisible.
+		A life support capsule does not give you pause for thought; you expect a genre convention to be there. That is what defines a genre convention, after all.<br>
+	</h2>
+
+	<h2 class="player">
+		Look keypad<br>
+	</h2>
+
+	<h2 class="text">
+		The keys on the keypad have no markings. Pushing a key turns off the light behind it, indicating which buttons have been pressed and which have not.
+		The keypad seems like an awfully conventional puzzle for a game with such striking visuals. Funny how that works both ways, isn’t it?<br>
+	</h2>
+
+	<h2 class="player">
+		Go port<br>
+	</h2>
+
+	<h2 class="text">
+		You return to the Upper Gallery.<br>
+	</h2>
+
+	<h2 class="player">
+		Go fore<br>
+	</h2>
+
+	<h2 class="text">
+		You enter the cockpit. There are two seats next to one another, surrounded by buttons, switches, and readouts, all turned off.
+		The view outside is obscured by the snow. There is a picture laying on the dashboard.<br>
+	</h2>
+
+	<h2 class="player">
+		Look dashboard<br>
+	</h2>
+
+	<h2 class="text">
+		In front of the pilot’s seat is the primary set of controls. The readouts for heading, attitude, and speed are covered up by a polaroid.
+		At the center of the picture sits a copy of Resident Evil 4, a game which you understand permanently changed the landscape of third-person shooters,
+		but also a game which you never played. You understand its legacy in factual terms,
+		but since most of the games you played in your formative years were a part of that post-Resident Evil 4 world,
+		since large parts of what were so innovative and sticky to those who played it were broadly implemented into the video games which it inspired,
+		the games you grew up playing, it never felt terribly worth your time to go back and play. In fact, your only real experience with the game itself was its VR release,
+		published sixteen years after the original, which you played for an hour or two on the aforementioned Quest 2.<br>
+		There is a grid of squares, three tall and three wide, drawn in pen on the back of the polaroid. Some of the squares are colored in.<br>
+	</h2>
+
+	<h2 class="player">
+		Go environmental office<br>
+	</h2>
+
+	<h2 class="text">
+		You return to the environmental office.<br>
+	</h2>
+
+	<h2 class="player">
+		Look keypad<br>
+	</h2>
+
+	<h2 class="text">
+		The keys on the keypad have no markings. Pushing a key turns off the light behind it, indicating which buttons have been pressed and which have not.<br>
+	</h2>
+
+	<h2 class="player">
+		Use photo on keypad<br>
+	</h2>
+
+	<h2 class="text">
+		You press the buttons on the keypad in the pattern which corresponds to the drawing on the back of the polaroid. The lights inside the life support chamber turn on,
+		illuminating the inside of the chamber. The liquid begins to drain through ports on the inside of the tub and the transparent lid of the chamber slowly swings upward,
+		causing a cool mist to spill out of the chamber. You watch the cold liquid until it fully recedes,
+		and a keycard makes itself visible on the floor of the empty life support chamber.<br>
+	</h2>
+
+	<h2 class="player">
+		Take card<br>
+	</h2>
+
+	<h2 class="text">
+		You take the keycard from the floor of the tub. It is cold.<br>
+	</h2>
+
+	<h2 class="player">
+		Go upper gallery<br>
+	</h2>
+
+	<h2 class="text">
+		You return to the upper gallery.<br>
+	</h2>
+
+	<h2 class="player">
+		Look<br>
+	</h2>
+
+	<h2 class="text">
+		The upper gallery is an octagonal room with a door leading fore to the cockpit, a door leading port, a door leading starboard to the environmental office,
+		and a ladder leading down to the lower gallery.<br>
+		Shelves and cabinets line the other faces of the octagonal room.<br>
+	</h2>
+
+	<h2 class="player">
+		Go port<br>
+	</h2>
+
+	<h2 class="text">
+		You enter the airlock. There are bright orange EVA suits on the wall to your left. There is a key reader on the wall to your right.
+		There are rails along the side of the wall, and handles on the ceiling with which to brace for a rapid change in pressure,
+		should the airlock door open before the pressure inside and outside have equalized.<br>
+	</h2>
+
+	<h2 class="player">
+		Use card on reader<br>
+	</h2>
+
+	<h2 class="text">
+		You swipe the card through the reader, and the display next to it flickers on. The display reads “Open Airlock” and points to a button beside it which lights up as well.<br>
+	</h2>
+
+	<h2 class="player">
+		Open airlock<br>
+	</h2>
+
+	<h2 class="text">
+		You press the button and klaxons blare. The rotating red lights in the corners of the room turn on,
+		casting shadows behind the suits and the railings that faintly stretch and contract as the reflectors inside the lights spin.
+		The door to the inside of the vessel closes quickly and air bursts from the vents in the walls and ceiling. The vents soon shut again,
+		and the alarms cease as the large hydraulic door to the outside begins to open. The wind whips at your hair and your body and the outside comes flooding in.<br>
+	</h2>
+
+	<h2 class="player">
+		Leave<br>
+	</h2>
+
+	<h2 class="text">
+		You step outside into the white expanse. The airlock door slowly closes behind you.<br>
+	</h2>
+
+	<h2 class="player">
+		Reflect<br>
+	</h2>
+
+	<h2 class="text">
+		There’s a game you saw on Steam a while ago. It’s called Holstin, and it’s the first game in a long time whose trailer made you genuinely excited for a game’s release.
+		It reminded you very much of the game you’re playing now, both games boasting beautiful pixel shaders, an intentionally retro mechanical feel,
+		and a deep love for the games which creatively preceded it, games like Resident Evil 4, games which have slightly, permanently changed the landscape of video games forever.
+		Holstin struck you as doing very interesting things with its camera, fluidly switching from the top-down third person view used by this game to a close-in over-the-shoulder
+		perspective reminiscent of the claustrophobic and oppressive atmosphere of Dead Space, and then to a variety of other angles used by games from across the medium.
+		The game you’re playing now does this a handful of times, suddenly transforming the experience from a tense survival horror experience into a vibrant narrative walking sim,
+		but it is always distinct which segment is which. The fluidity featured in the trailer you watched was astonishing and seamless.
+		You didn’t think this was possible before watching this trailer. Not in the sense that it would be technically challenging to implement,
+		but in the sense that you’ve suddenly realized this imagined barrier never really existed.
+		You feel how it must have felt to play Resident Evil 4 on the day it hit store shelves, to be blown away by transformative views on what video games could look and feel like.
+		You look back on how this game has influenced you and see that it, too, was transformative, how it has become a giant whose shoulders for Holstin to stand upon.
+		You understand a little better now. The future is exciting.<br>
+		You breathe deep and you walk out into the vast, white unknown.<br>
+	</h2>
+</div>
+
+</body>
+</html>
+<script type="text/javascript">
+	const body = document.firstElementChild.children.item(1);
+	const content = body.firstElementChild;
+	const paragraphDelay = 500;
+
+	for (let elem of content.children) {
+		elem.style.setProperty('--n', elem.innerHTML.replace(/(<br>)|\n\s*/g,"").trim().length);
+	}
+	content.children.item(0).addEventListener("animationend", () => setTimeout(() => goNext(content.children.item(0)), paragraphDelay));
+	
+	let currentNode = null;
+	function goNext(current) {
+		current.classList.add("show");
+		current.classList.remove("typewrite");
+		next = current.nextElementSibling;
+		if (next != null)
+		{
+			next.classList.add("typewrite");
+			next.scrollIntoView();
+			currentNode = next;
+			if (next.classList.contains("player"))
+				next.addEventListener("animationend", () => next.addEventListener("click", () => goNext(next)));
+			else
+				next.addEventListener("animationend", () => setTimeout(() => goNext(next), paragraphDelay));
+		}
+		else
+			body.style.setProperty("overflow", "scroll");
+	}
+	window.onresize = () => {
+		currentNode.scrollIntoView();
+	}
+</script>
